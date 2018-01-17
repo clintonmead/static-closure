@@ -1,0 +1,57 @@
+name:                static-closure
+version:             0.1.0.0
+github:              "clintonmead/static-closure"
+license:             BSD3
+author:              "Clinton Mead"
+maintainer:          "clintonmead@gmail.com"
+copyright:           "Copyright: (c) 2018 Clinton Mead"
+
+synopsis:            Serialisable static pointers to functions
+category:            Control
+
+description:
+  A more generalised and expanded version of the ideas found
+  in [distributed-closure](https://hackage.haskell.org/package/distributed-closure)
+  in the following ways:-
+
+
+  1. This library allows for the core serialisable type to any type, although we
+  currently only implement \"Binary\".
+
+
+  2. Template Haskell is used to implement dictionary instances for all instances
+  of \"Binary\" in all packages shipped with GHC with the assistance
+  of [ghc-instances](https://hackage.haskell.org/package/ghc-instances).
+
+
+  This library is very much a work in progress. It is largely untested except to
+  check it compiles. Future tasks to do include:-
+
+
+  1. Writing some test cases to make sure this actually works.
+
+
+  2. Integrating with [freelude](https://hackage.haskell.org/package/freelude),
+  the restricted \"pure\" function is perfect to define in \"freelude\".
+
+
+  3. Writing some more Template Haskell functions to allow easy integration with user defined types.
+
+
+  4. Linking this up with [acid-state](https://hackage.haskell.org/package/acid-state)
+  in a somewhat sensible way.
+
+
+dependencies:
+- base >= 4.7 && < 5
+- constraints
+- containers
+- template-haskell
+- binary
+- bytestring
+- ghc-instances
+
+library:
+  source-dirs: src
+  ghc-options:
+    - -Wall
